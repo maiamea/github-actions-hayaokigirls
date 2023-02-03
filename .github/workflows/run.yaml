@@ -11,4 +11,4 @@ jobs:
           USERNAME: ${{secrets.USERNAME}}
           PASSWORD: ${{secrets.PASSWORD}}
           TARGET_URL: ${{vars.TARGET_URL}}
-        run: curl -u ${USERNAME}:${PASSWORD} ${TARGET_URL} --head XGET
+        run: curl -u ${USERNAME}:${PASSWORD} ${TARGET_URL} --head -XGET
