@@ -1,7 +1,7 @@
 name: github-actions-hayaokigirls
 on: 
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 jobs:
   Regular-Execution-Action:
     runs-on: ubuntu-latest
@@ -11,4 +11,4 @@ jobs:
           USERNAME: ${{secrets.USERNAME}}
           PASSWORD: ${{secrets.PASSWORD}}
           TARGET_URL: ${{vars.TARGET_URL}}
-        run: curl -u ${USERNAME}:${PASSWORD} ${TARGET_URL}
+        run: curl -u ${USERNAME}:${PASSWORD} ${TARGET_URL} --head XGET
