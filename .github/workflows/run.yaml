@@ -1,0 +1,14 @@
+name: github-actions-hayaokigirls
+on: 
+  schedule:
+    - cron: '*/10 * * * *'
+jobs:
+  Regular-Execution-Action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: request to target_url
+        env:
+          USERNAME: ${{secrets.USERNAME}}
+          PASSWORD: ${{secrets.PASSWORD}}
+          TARGET_URL: ${{vars.TARGET_URL}}
+        run: curl -u ${USERNAME}:${PASSWORD} ${TARGET_URL}
